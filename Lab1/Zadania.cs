@@ -46,7 +46,7 @@
     public static void Zad5()
     {
         var random = new Random();
-        var rngLiczba = random.Next(1, 100);
+        var rnumber = random.Next(1, 100);
         var proba = 0;
 
         Console.WriteLine("Zgadnij liczbe z zakresu 1-100");
@@ -57,13 +57,13 @@
             var input = Console.ReadLine();
             var liczba = int.Parse(input);
 
-            if (liczba == rngLiczba)
+            if (liczba == rnumber)
             {
-                Console.WriteLine($"Gratulacje! Zgadles liczbe! {proba} prob");
+                Console.WriteLine($"Gratulacje! Zgadles liczbe za {proba} probami");
                 break;
             }
 
-            Console.WriteLine(liczba < rngLiczba ? "Za mala liczba" : "Za duza liczba");
+            Console.WriteLine(liczba < rnumber ? "Za mala liczba" : "Za duza liczba");
         }
     }
 
@@ -71,17 +71,17 @@
     {
         while (true)
         {
-            Console.WriteLine("0. koniec programu");
-            Console.WriteLine("1. zadanie 4");
-            Console.WriteLine("2. zadanie 5");
-            Console.WriteLine("3. cos tam");
-            Console.Write("Podaj liczbe:");
+            Console.WriteLine("Wybór zadania: ");
+            Console.WriteLine("0. Koniec programu");
+            Console.WriteLine("1. Zadanie 4");
+            Console.WriteLine("2. Zadanie 5");
+            Console.WriteLine("Podaj numer polecenia:");
             var input = Console.ReadLine();
 
             switch (input)
             {
                 case "0":
-                    break;
+                    return;
 
                 case "1":
                     Console.WriteLine("Wpisz swoją liczbe: ");
@@ -91,10 +91,6 @@
 
                 case "2":
                     Zad5();
-                    break;
-
-                case "3":
-                    Console.WriteLine("cos tam 3");
                     break;
             }
         }
