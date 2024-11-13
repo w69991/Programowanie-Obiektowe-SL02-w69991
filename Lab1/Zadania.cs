@@ -2,7 +2,8 @@
 {
     public static void Zad1()
     {
-        Console.Write("Podaj liczbe:");
+        Console.WriteLine("Zadanie 1.");
+        Console.Write("Podaj liczbe do sprawdzenia: ");
         var input = Console.ReadLine();
         var liczba = int.Parse(input);
 
@@ -22,16 +23,14 @@
 
     public static void Zad2()
     {
-        Console.Write("Podaj liczbe:");
+        Console.WriteLine("Zadanie 2.");
+        Console.Write("Podaj liczbe: ");
         var input = Console.ReadLine();
-        var liczba = int.Parse(input);
+        var n = int.Parse(input);
 
-        for (var i = 1; i <= liczba; i++)
+        for (var i = 2; i <= n; i += 2)
         {
-            if (i % 2 == 0)
-            {
-                Console.WriteLine(i);
-            }
+            Console.WriteLine(i);
         }
     }
 
@@ -69,13 +68,14 @@
 
     public static void Zad3()
     {
+        Console.WriteLine("Zadanie 3.");
         while (true)
         {
-            Console.WriteLine("Wybór zadania: ");
-            Console.WriteLine("0. Koniec programu");
+            Console.WriteLine("Wybór pozostałych zadań: ");
+            Console.WriteLine("0. Wyjście");
             Console.WriteLine("1. Zadanie 4");
             Console.WriteLine("2. Zadanie 5");
-            Console.WriteLine("Podaj numer polecenia:");
+            Console.Write("Wybierz polecenie:");
             var input = Console.ReadLine();
 
             switch (input)
@@ -84,7 +84,7 @@
                     return;
 
                 case "1":
-                    Console.WriteLine("Wpisz swoją liczbe: ");
+                    Console.Write("Wpisz swoją liczbe: ");
                     int n = int.Parse(Console.ReadLine());
                     Console.WriteLine($"Silnia wynosi: {Zad4(n)} ");
                     break;
