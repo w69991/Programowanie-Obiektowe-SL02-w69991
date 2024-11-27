@@ -9,32 +9,54 @@ namespace Lab2.Models
 {
     public class Osoba
     {
-        private string Imie;
-        private string Nazwisko;
-        private int Wiek;
-        private string Pesel;
+        private string imie;
+        private string nazwisko;
+        private int wiek;
+        private string pesel;
             
         public Osoba(string imie, string nazwisko, int wiek, string pesel)
         {
-            Imie = imie;
-            Nazwisko = nazwisko;
-            Wiek = wiek;
-            Pesel = pesel;
+            this.Imie = imie;
+            this.Nazwisko = nazwisko;
+            this.Wiek = wiek;
+            this.pesel = pesel;
         }
-    public string imie
-        { get { return Imie; }
-          set { Imie = value; }
+    public string Imie
+        { get { return imie; }
+          set { imie = value; }
         }
-    public string nazwisko
-            { get { return Nazwisko; } set { Nazwisko = value; } }
-    public int wiek
-            { get { return Wiek; } set { Wiek = value; } }
-
-     public readonly string pesel;
-    
-    public void PrzedstawSie()
+    public string Nazwisko
         {
-            Console.WriteLine($"Nazywam sie {imie} {nazwisko} i mam {wiek} lat ");
+            get { return nazwisko; } 
+            set { nazwisko = value; } 
         }
+
+        public int Wiek
+        {
+            get { return wiek; } 
+            set { wiek = value; }
+        }
+
+        public string Pesel
+        {
+            get { return pesel; }
+        }
+     
+     public string PrzedstawSie()
+     {
+         return $"Nazywam sie {imie} {nazwisko} i mam {wiek} lat ";
+     }
+
+     public void UstawWiek(int setwiek)
+     {
+         if (setwiek < 0)
+         {
+             Wiek = 0;
+             return;
+         }
+
+         Wiek = setwiek;
+     }
+     
     }
 }
